@@ -30,10 +30,10 @@
 (require 'yaml-mode)
 (require 'mmm-jinja2)
 
+;;;###autoload
 (define-derived-mode cfn-mode yaml-mode
-  "AWS Cloudformation
-
-Cloudformation mode derived from yaml-mode.")
+  "AWS Cloudformation"
+  "Cloudformation mode derived from yaml-mode.")
 
 (defun cfn-mode-setup-jinja ()
   "Set up jinja support for sceptre yaml.
