@@ -5,7 +5,7 @@
 
 EMACS="${EMACS:=emacs}"
 
-NEEDED_PACKAGES="elisp-lint"
+NEEDED_PACKAGES="elisp-lint mmm-mode yaml-mode mmm-jinja2"
 
 INIT_PACKAGE_EL="(progn \
   (require 'package) \
