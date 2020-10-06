@@ -1,0 +1,9 @@
+#+TITLE: cfn-mode
+
+[[https://gitlab.com/worr/cfn-mode][https://gitlab.com/worr/cfn-mode/badges/master/pipeline.svg]]
+
+A basic emacs mode for working with AWS Cloudformation
+
+** Emacs Dependencies
+
+** Configuration
