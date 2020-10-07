@@ -1,13 +1,13 @@
 default:
-  image: silex/emacs:27
+  image: silex/emacs:27-dev
 
 lint 27:
   script: make lint
 
 lint 26:
-  script: ./run-tests.sh
-  image: make lint
+  script: make lint
+  image: silex/emacs:26-dev
 
 lint 25:
-  script: ./run-tests.sh
-  image: make lint
+  script: make lint
+  image: silex/emacs:25-dev
