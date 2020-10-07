@@ -5,6 +5,7 @@ lint cfn-mode emacs27:
   stage: test
   script:
     - cd cfn-mode
+    - make deps
     - make lint
 
 lint cfn-mode emacs26:
