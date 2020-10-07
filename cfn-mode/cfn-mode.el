@@ -26,8 +26,6 @@
 
 ;;; Code:
 
-(require 'mmm-mode)
-(require 'mmm-jinja2)
 (require 'yaml-mode)
 
 ;;;###autoload
@@ -35,26 +33,10 @@
   "AWS Cloudformation"
   "Cloudformation mode derived from yaml-mode.")
 
-(defun cfn-mode-setup-jinja ()
-  "Set up jinja support for sceptre yaml.
-
-`cfn-mode' can optionally use jinja2 to support templated cfn files, as used
-in sceptre."
-  (mmm-add-mode-ext-class 'cfn-mode "\\.j2\'" 'jinja2))
-
 ;; Detect cfn yaml files based on ~AWSTemplateFormatVersion~ property
 ;;;###autoload
 (add-to-list 'magic-mode-alist
              '("\\(---\n\\)?AWSTemplateFormatVersion:" . cfn-mode))
-
-;; This is to support sceptre, which supports both standard
-;; cfn yaml files as well as yaml files templated with jinja
-;;;###autoload
-(add-to-list 'auto-mode-alist
-             '("\\.yaml.j2\\'" . cfn-mode))
-
-(add-hook 'mmm-mode-hook 'cfn-mode-setup-jinja)
-(add-hook 'cfn-mode-hook 'mmm-mode)
 
 (provide 'cfn-mode)
 
