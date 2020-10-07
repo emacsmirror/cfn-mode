@@ -1,15 +1,13 @@
 default:
   image: silex/emacs:27
-  before_script:
-    - chmod +x run-tests.sh
 
 lint 27:
-  script: ./run-tests.sh
+  script: make lint
 
 lint 26:
   script: ./run-tests.sh
-  image: silex/emacs:26
+  image: make lint
 
 lint 25:
   script: ./run-tests.sh
-  image: silex/emacs:25
+  image: make lint
