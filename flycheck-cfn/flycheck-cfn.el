@@ -103,6 +103,13 @@ See `https://github.com/stelligent/cfn_nag'"
   :error-parser flycheck-cfn-parse-cfn-nag
   :modes (cfn-mode))
 
+;;;###autoload
+(defun flycheck-cfn-setup ()
+  "Setup cfn linters for flycheck."
+  (add-to-list 'flycheck-checkers 'cfn-nag)
+  (add-to-list 'flycheck-checkers 'cfn-lint)
+  (flycheck-mode +1))
+
 (provide 'flycheck-cfn)
 
 ;;; flycheck-cfn.el ends here
