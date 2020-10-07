@@ -1,26 +1,15 @@
-.PHONY = deps build lint clean
+.PHONY = build
 
-FILES := cfn-mode.elc
+PACKAGES := cfn-mode flycheck-cfn
 
-CASK ?= cask
-EMACS ?= emacs
-
-.el.elc:
-	$(CASK) build
+build:
+	$(foreach pkg, $(PACKAGES), $(MAKE) -C $(pkg) $@;)
 
 deps:
-	$(CASK) install
+	$(foreach pkg, $(PACKAGES), $(MAKE) -C $(pkg) $@;)
 
-build: $(FILES)
-
-lint: $(FILES)
-	$(CASK) exec $(EMACS) \
-		-Q \
-		-batch \
-		--eval "(require 'elisp-lint)" \
-		-f elisp-lint-files-batch \
-		$(patsubst %.elc,%.el,$(FILES))
+lint:
+	$(foreach pkg, $(PACKAGES), $(MAKE) -C $(pkg) $@;)
 
 clean:
-	cask clean-elc
-	rm -f *-autoloads.el *-autoloads.el~
+	$(foreach pkg, $(PACKAGES), $(MAKE) -C $(pkg) $@;)

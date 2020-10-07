@@ -1,13 +1,65 @@
+stages:
+  - build
+  - test
+
 default:
   image: silex/emacs:27-dev
 
-lint 27:
+build cfn-mode emacs27:
+  stage: build
   script:
+    - cd cfn-mode
+    - make deps
+    - make build
+
+lint cfn-mode emacs27:
+  stage: test
+  script:
+    - cd cfn-mode
+    - make lint
+
+build cfn-mode emacs26:
+  stage: build
+  script:
+    - cd cfn-mode
+    - make deps
+    - make build
+  image: silex/emacs:26-dev
+
+lint cfn-mode emacs26:
+  stage: test
+  script:
+    - cd cfn-mode
+    - make deps
+    - make lint
+  image: silex/emacs:26-dev
+
+lint flycheck-cfn emacs27:
+  stage: test
+  script:
+    - cd flycheck-cfn
     - make deps
     - make lint
 
-lint 26:
+build flycheck-cfn emacs27:
+  stage: build
   script:
+    - cd flycheck-cfn
+    - make deps
+    - make build
+
+lint flycheck-cfn emacs26:
+  stage: test
+  script:
+    - cd flycheck-cfn
     - make deps
     - make lint
+  image: silex/emacs:26-dev
+
+build flycheck-cfn emacs26:
+  stage: build
+  script:
+    - cd flycheck-cfn
+    - make deps
+    - make build
   image: silex/emacs:26-dev

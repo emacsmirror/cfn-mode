@@ -1,0 +1,19 @@
+#+TITLE: flycheck-cfn.el
+
+[[https://gitlab.com/worr/flycheck-cfn.el][https://gitlab.com/worr/flycheck-cfn.el/badges/master/pipeline.svg]]
+
+** External Dependencies
+
+- cfn_nag :: [[https://github.com/stelligent/cfn_nag]]
+- cfn-lint :: [[https://github.com/aws-cloudformation/cfn-python-lint]]
+
+** Emacs Dependencies
+
+- flycheck
+
+** Configuration
+
+#+begin_src emacs-lisp
+(add-hook 'cfn-mode-hook
+  (setq flycheck-checkers (append flycheck-checkers '(cfn-lint cfn-nag))))
+#+end_src

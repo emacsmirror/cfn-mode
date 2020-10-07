@@ -1,0 +1,9 @@
+(source gnu)
+(source melpa)
+
+(package-file "flycheck-cfn.el")
+
+(depends-on "flycheck")
+
+(development
+ (depends-on "elisp-lint"))
