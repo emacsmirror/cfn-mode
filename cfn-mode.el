@@ -5,7 +5,7 @@
 ;; Author: William Orr <will@worrbase.com>
 ;; Version: 0.1.0
 ;; Keywords: convenience languages tools
-;; Package-Requires: ((emacs "25.3"))
+;; Package-Requires: ((emacs "26.0"))
 ;; URL: https://gitlab.com/worr/cfn-mode
 
 ;; cfn-mode is free software; you can redistribute it and/or modify it

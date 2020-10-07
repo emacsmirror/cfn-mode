@@ -11,9 +11,3 @@ lint 26:
     - make deps
     - make lint
   image: silex/emacs:26-dev
-
-lint 25:
-  script:
-    - make deps
-    - make lint
-  image: silex/emacs:25-dev
