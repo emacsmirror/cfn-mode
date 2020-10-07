@@ -1,4 +1,4 @@
-.PHONY = build lint clean
+.PHONY = deps build lint clean
 
 FILES := cfn-mode.elc
 
@@ -7,6 +7,9 @@ EMACS ?= emacs
 
 .el.elc:
 	$(CASK) build
+
+deps:
+	$(CASK) install
 
 build: $(FILES)
 
