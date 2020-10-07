@@ -27,8 +27,8 @@
 ;;; Code:
 
 (require 'mmm-mode)
-(require 'yaml-mode)
 (require 'mmm-jinja2)
+(require 'yaml-mode)
 
 ;;;###autoload
 (define-derived-mode cfn-mode yaml-mode
@@ -53,8 +53,8 @@ in sceptre."
 (add-to-list 'auto-mode-alist
              '("\\.yaml.j2\\'" . cfn-mode))
 
-(add-hook 'cfn-mode-hook 'mmm-mode)
 (add-hook 'mmm-mode-hook 'cfn-mode-setup-jinja)
+(add-hook 'cfn-mode-hook 'mmm-mode)
 
 (provide 'cfn-mode)
 
