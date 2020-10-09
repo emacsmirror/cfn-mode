@@ -6,7 +6,7 @@
 ;; Version: 0.1.0
 ;; Keywords: convenience
 ;; Package-Requires: ((emacs "25.3") (flycheck "31"))
-;; URL: https://gitlab.com/worr/flycheck-cfn.el
+;; URL: https://gitlab.com/worr/cfn-mode
 
 ;; flycheck-cfn is free software; you can redistribute it and/or modify it
 ;; under the terms of the GNU General Public License as published by the Free
