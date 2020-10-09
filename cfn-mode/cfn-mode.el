@@ -28,6 +28,12 @@
 
 (require 'yaml-mode)
 
+(defgroup cfn nil
+  "Cloudformation major mode."
+  :group 'languages
+  :prefix "cfn-"
+  :link '(url-link :tag "Gitlab" "https://gitlab.com/worr/cfn-mode"))
+
 ;;;###autoload
 (define-derived-mode cfn-mode yaml-mode
   "AWS Cloudformation"

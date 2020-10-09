@@ -47,7 +47,7 @@
   "Cloudformation support for flycheck"
   :prefix "flycheck-cfn-"
   :group 'flycheck
-  :link '(url-link :tag "Gitlab" "https://gitlab.com/worr/flycheck-cfn.el"))
+  :link '(url-link :tag "Gitlab" "https://gitlab.com/worr/cfn-mode"))
 
 (defun flycheck-cfn-parse-cfn-nag (output checker buffer)
   "Parse cfn-nag errors from JSON OUTPUT.
