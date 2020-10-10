@@ -96,8 +96,51 @@
     (insert (json-serialize cfn-gen-dump))
     (write-file filename)))
 
-(cfn-gen-fetch-all-definitions)
-(cfn-gen-write-definitions-file "out.json")
+(defun cfn-gen-deep-get (key data)
+  "Gets per-entity KEY from hash-table DATA from Amazon."
+  (unless (hash-table-p data)
+    (error "DATA must be hash table."))
+  (unless (stringp key)
+    (error "KEY must be a string."))
+  (delete-dups
+   (let (result)
+     (dolist (element (hash-table-values data) result)
+       (setq result (append (hash-table-keys (gethash key element)) result))))))
+
+(defun cfn-gen-get-types (data)
+  "Gets all CFN types from hash-table DATA."
+  (cfn-gen-deep-get "ResourceTypes" data))
+
+(defun cfn-gen-get-properties (data)
+  "Gets all CFN properties from hash-table DATA."
+  (let (result)
+    (dolist (element (cfn-gen-deep-get "PropertyTypes" data) result)
+      (setq result (append (last (split-string element "\\.")) result)))))
+
+(defun cfn-gen-serialize-to-file (object filename)
+  "Write elisp OBJECT to FILENAME."
+  (with-temp-buffer
+    (prin1 object (current-buffer))
+    (write-file filename)))
+
+(defun cfn-gen-write-resource-file (filename)
+  "Write all of the resources into FILENAME."
+  (cfn-gen-serialize-to-file
+   (cfn-gen-get-types cfn-gen-dump)
+   filename))
+
+(defun cfn-gen-write-properties-file (filename)
+  "Write all of the properties into FILENAME."
+  (cfn-gen-serialize-to-file
+   (cfn-gen-get-properties cfn-gen-dump)
+   filename))
+
+(defun cfn-gen-batch-all-defaults ()
+  "Fetch all definitions and write them out to default locations."
+  (cfn-gen-fetch-all-definitions)
+  (cfn-gen-write-definitions-file "cfn-all.json")
+  (cfn-gen-write-resource-file "cfn-resources.el")
+  (cfn-gen-write-properties-file "cfn-properties.el"))
 
 (provide 'cfn-gen)
 
