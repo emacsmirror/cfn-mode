@@ -99,9 +99,9 @@
 (defun cfn-gen-deep-get (key data)
   "Gets per-entity KEY from hash-table DATA from Amazon."
   (unless (hash-table-p data)
-    (error "DATA must be hash table."))
+    (error "DATA must be hash table"))
   (unless (stringp key)
-    (error "KEY must be a string."))
+    (error "KEY must be a string"))
   (delete-dups
    (let (result)
      (dolist (element (hash-table-values data) result)
