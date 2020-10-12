@@ -1,5 +1,7 @@
 include ../common.mk
 
+.PHONY = defs
+
 EMACSFLAGS := -L ../cfn-mode
 FILES := cfn-gen.elc
 
