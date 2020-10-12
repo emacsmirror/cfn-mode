@@ -28,6 +28,7 @@
 
 ;;; Code:
 (require 'cl-lib)
+(require 'f)
 (require 'request)
 
 (defconst cfn-gen-regional-cfn-urls
@@ -92,9 +93,10 @@
   "Write the fetched definitions into FILENAME."
   (unless (stringp filename)
     (error "Filename must be string"))
-  (with-temp-buffer
-    (insert (json-serialize cfn-gen-dump))
-    (write-file filename)))
+  (f-write-text
+    (json-serialize cfn-gen-dump)
+    coding-category-utf-8
+    filename))
 
 (defun cfn-gen-deep-get (key data)
   "Gets per-entity KEY from hash-table DATA from Amazon."
@@ -119,9 +121,10 @@
 
 (defun cfn-gen-serialize-to-file (object filename)
   "Write elisp OBJECT to FILENAME."
-  (with-temp-buffer
-    (prin1 object (current-buffer))
-    (write-file filename)))
+  (f-write-text
+    (prin1-to-string object)
+    coding-category-utf-8
+    filename))
 
 (defun cfn-gen-write-resource-file (filename)
   "Write all of the resources into FILENAME."

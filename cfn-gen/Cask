@@ -3,6 +3,7 @@
 
 (package-file "cfn-gen.el")
 
+(depends-on "f")
 (depends-on "request")
 
 (development
