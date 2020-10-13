@@ -94,9 +94,9 @@
   (unless (stringp filename)
     (error "Filename must be string"))
   (f-write-text
-    (json-serialize cfn-gen-dump)
-    coding-category-utf-8
-    filename))
+   (json-serialize cfn-gen-dump)
+   coding-category-utf-8
+   filename))
 
 (defun cfn-gen-deep-get (key data)
   "Gets per-entity KEY from hash-table DATA from Amazon."
@@ -122,9 +122,9 @@
 (defun cfn-gen-serialize-to-file (object filename)
   "Write elisp OBJECT to FILENAME."
   (f-write-text
-    (prin1-to-string object)
-    coding-category-utf-8
-    filename))
+   (prin1-to-string object)
+   coding-category-utf-8
+   filename))
 
 (defun cfn-gen-write-resource-file (filename)
   "Write all of the resources into FILENAME."
