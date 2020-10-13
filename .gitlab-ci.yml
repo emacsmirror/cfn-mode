@@ -30,3 +30,11 @@ lint flycheck-cfn emacs26:
     - make deps
     - make lint
   image: silex/emacs:26-dev
+
+# only lint this in emacs27. it's dev-only so compat doesn't matter
+lint cfn-gen emacs27:
+  stage: test
+  script:
+    - cd cfn-gen
+    - make deps
+    - make lint
