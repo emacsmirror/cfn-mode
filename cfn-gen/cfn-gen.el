@@ -117,9 +117,12 @@
 
 (defun cfn-gen-get-properties (data)
   "Gets all CFN properties from hash-table DATA."
-  (let (result)
-    (dolist (element (cfn-gen-deep-get "PropertyTypes" data) result)
-      (setq result (append (last (split-string element "\\.")) result)))))
+  (sort
+   (delete-dups
+    (let (result)
+      (dolist (element (cfn-gen-deep-get "PropertyTypes" data) result)
+        (setq result (append (last (split-string element "\\.")) result)))))
+   'string<))
 
 (defun cfn-gen-serialize-to-file (object filename)
   "Write elisp OBJECT to FILENAME."
