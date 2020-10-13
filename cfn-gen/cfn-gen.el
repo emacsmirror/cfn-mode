@@ -104,10 +104,12 @@
     (error "DATA must be hash table"))
   (unless (stringp key)
     (error "KEY must be a string"))
-  (delete-dups
-   (let (result)
-     (dolist (element (hash-table-values data) result)
-       (setq result (append (hash-table-keys (gethash key element)) result))))))
+  (sort
+   (delete-dups
+    (let (result)
+      (dolist (element (hash-table-values data) result)
+        (setq result (append (hash-table-keys (gethash key element)) result)))))
+   'string<))
 
 (defun cfn-gen-get-types (data)
   "Gets all CFN types from hash-table DATA."
