@@ -11,9 +11,9 @@ EMACSFLAGS ?=
 deps:
 	$(CASK) install
 
-build: $(FILES)
+build: $(FILES) deps
 
-lint: $(FILES)
+lint: $(FILES) deps
 	$(CASK) exec $(EMACSBATCH) \
 		$(EMACSFLAGS) \
 		--eval "(require 'elisp-lint)" \
