@@ -121,7 +121,7 @@
    (delete-dups
     (let (result)
       (dolist (element (cfn-gen-deep-get "PropertyTypes" data) result)
-        (setq result (append (last (split-string element "\\.")) result)))))
+        (setq result (append (list (first (split-string element "\\."))) result)))))
    'string<))
 
 (defun cfn-gen-serialize-to-file (object filename)
