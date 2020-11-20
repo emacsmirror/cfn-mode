@@ -1,4 +1,4 @@
-;;; cfn-gen.el --- CFN definition fetcher and parser
+;;; cfn-gen.el --- CFN definition fetcher and parser -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2020  William Orr <will@worrbase.com>
 ;;
