@@ -3,6 +3,8 @@
 
 (package-file "cfn-mode.el")
 
+(depends-on "f")
+(depends-on "s")
 (depends-on "yaml-mode")
 
 (development

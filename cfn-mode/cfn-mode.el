@@ -26,6 +26,11 @@
 
 ;;; Code:
 
+;; cl-extra is part of emacs
+(require 'cl-extra)
+
+(require 'f)
+(require 's)
 (require 'yaml-mode)
 
 (defgroup cfn nil
@@ -34,10 +39,30 @@
   :prefix "cfn-"
   :link '(url-link :tag "Gitlab" "https://gitlab.com/worr/cfn-mode"))
 
+(defun cfn--read-font-lock-keywords (filename)
+  "Read font lock keywords from FILENAME."
+  (read
+   (split-string
+    (f-read
+     (f-join
+      (f-dirname
+       (or load-file-name (buffer-file-name)))
+      filename)) "\n")))
+
+(defconst cfn-font-lock-keywords
+  (let ((properties (cfn--read-font-lock-keywords "cfn-properties.el"))
+        (resources (cfn--read-font-lock-keywords "cfn-resources.el")))
+    (cl-map 'list
+            (lambda (item)
+              (cons (s-wrap item "[\"']?\\(\\<" "\\>\\)[\"']?") 1))
+            (append properties resources)))
+  "Highlighted CFN keywords.")
+
 ;;;###autoload
 (define-derived-mode cfn-mode yaml-mode
   "AWS Cloudformation"
-  "Cloudformation mode derived from yaml-mode.")
+  "Cloudformation mode derived from yaml-mode."
+  (font-lock-add-keywords nil cfn-font-lock-keywords))
 
 ;; Detect cfn yaml files based on ~AWSTemplateFormatVersion~ property
 ;;;###autoload
