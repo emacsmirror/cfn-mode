@@ -1,5 +1,5 @@
 default:
-  image: silex/emacs:27-dev
+  image: silex/emacs:27-ci-cask
 
 lint cfn-mode emacs27:
   stage: test
@@ -14,7 +14,7 @@ lint cfn-mode emacs26:
     - cd cfn-mode
     - make deps
     - make lint
-  image: silex/emacs:26-dev
+  image: silex/emacs:26-ci-cask
 
 lint flycheck-cfn emacs27:
   stage: test
@@ -29,7 +29,7 @@ lint flycheck-cfn emacs26:
     - cd flycheck-cfn
     - make deps
     - make lint
-  image: silex/emacs:26-dev
+  image: silex/emacs:26-ci-cask
 
 # only lint this in emacs27. it's dev-only so compat doesn't matter
 lint cfn-gen emacs27:
