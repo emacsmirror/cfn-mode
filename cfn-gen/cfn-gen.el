@@ -3,9 +3,9 @@
 ;; Copyright (C) 2020  William Orr <will@worrbase.com>
 ;;
 ;; Author: William Orr <will@worrbase.com>
-;; Version: 0.1.0
+;; Version: 1.0.0
 ;; Keywords: convenience
-;; Package-Requires: ((emacs "27.1"))
+;; Package-Requires: ((emacs "27.1") (f "0.20.0") (request "0.3.2"))
 ;; URL: https://gitlab.com/worr/cfn-mode
 
 ;; cfn-gen is free software; you can redistribute it and/or modify it
