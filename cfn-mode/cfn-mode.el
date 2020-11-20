@@ -52,7 +52,7 @@
 (defconst cfn-font-lock-keywords
   (let ((properties (cfn--read-font-lock-keywords "cfn-properties.el"))
         (resources (cfn--read-font-lock-keywords "cfn-resources.el")))
-    (cl-map 'list
+    (cl-map #'list
             (lambda (item)
               (cons (s-wrap item "[\"']?\\(\\<" "\\>\\)[\"']?") 1))
             (append properties resources)))

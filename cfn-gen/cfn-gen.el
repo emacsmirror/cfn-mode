@@ -70,7 +70,7 @@
   (request
     url
     :headers '((Content-Type . "application-json"))
-    :parser 'json-parse-buffer
+    :parser #'json-parse-buffer
     :sync t
     :success
     (cl-function
@@ -109,7 +109,7 @@
     (let (result)
       (dolist (element (hash-table-values data) result)
         (setq result (append (hash-table-keys (gethash key element)) result)))))
-   'string<))
+   #'string<))
 
 (defun cfn-gen-get-types (data)
   "Gets all CFN types from hash-table DATA."
@@ -122,7 +122,7 @@
     (let (result)
       (dolist (element (cfn-gen-deep-get "PropertyTypes" data) result)
         (setq result (append (list (car (split-string element "\\."))) result)))))
-   'string<))
+   #'string<))
 
 (defun cfn-gen-serialize-to-file (object filename)
   "Write elisp OBJECT to FILENAME."
