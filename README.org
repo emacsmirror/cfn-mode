@@ -20,8 +20,7 @@ Syntax checking for AWS Cloudformation through flycheck
 *** Configuration
 
 #+begin_src emacs-lisp
-(add-hook 'cfn-mode-hook
-  (setq flycheck-checkers (append flycheck-checkers '(cfn-lint cfn-nag))))
+(flycheck-cfn-setup)
 #+end_src
 
 ** cfn-gen
