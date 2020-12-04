@@ -3,7 +3,7 @@
 ;; Copyright (C) 2020  William Orr <will@worrbase.com>
 ;;
 ;; Author: William Orr <will@worrbase.com>
-;; Version: 1.0.0
+;; Version: 1.0.1
 ;; Keywords: convenience
 ;; Package-Requires: ((emacs "27.1") (f "0.20.0") (request "0.3.2"))
 ;; URL: https://gitlab.com/worr/cfn-mode
