@@ -2,8 +2,30 @@
 
 [[https://gitlab.com/worr/cfn-mode][https://gitlab.com/worr/cfn-mode/badges/master/pipeline.svg]]
 
+** cfn-mode
+
 A basic emacs mode for working with AWS Cloudformation
 
-** Emacs Dependencies
+*** Configuration
 
-** Configuration
+** flycheck-cfn
+
+Syntax checking for AWS Cloudformation through flycheck
+
+*** External Dependencies
+
+- cfn_nag :: [[https://github.com/stelligent/cfn_nag]]
+- cfn-lint :: [[https://github.com/aws-cloudformation/cfn-python-lint]]
+
+*** Configuration
+
+#+begin_src emacs-lisp
+(add-hook 'cfn-mode-hook
+  (setq flycheck-checkers (append flycheck-checkers '(cfn-lint cfn-nag))))
+#+end_src
+
+** cfn-gen
+
+Pulls down AWS objects from Amazon, and creates files for consumption by
+~cfn-mode~ for syntax highlighting. This is a development tool, and only meant
+to be run by the developers of these packages.
