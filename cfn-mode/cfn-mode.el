@@ -3,7 +3,7 @@
 ;; Copyright (C) 2020  William Orr <will@worrbase.com>
 ;;
 ;; Author: William Orr <will@worrbase.com>
-;; Version: 1.0.1
+;; Version: 1.0.2
 ;; Keywords: convenience languages tools
 ;; Package-Requires: ((emacs "26.0") (f "0.20.0") (s "1.12.0")  (yaml-mode "0.0.13"))
 ;; URL: https://gitlab.com/worr/cfn-mode
@@ -50,8 +50,8 @@
       filename)) "\n")))
 
 (defconst cfn-font-lock-keywords
-  (let ((properties (cfn--read-font-lock-keywords "cfn-properties.el"))
-        (resources (cfn--read-font-lock-keywords "cfn-resources.el")))
+  (let ((properties (cfn--read-font-lock-keywords "cfn-properties.dat"))
+        (resources (cfn--read-font-lock-keywords "cfn-resources.dat")))
     (cl-map #'list
             (lambda (item)
               (cons (s-wrap item "[\"']?\\(\\<" "\\>\\)[\"']?") 1))
