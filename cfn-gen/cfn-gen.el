@@ -147,8 +147,8 @@
   "Fetch all definitions and write them out to default locations."
   (cfn-gen-fetch-all-definitions)
   (cfn-gen-write-definitions-file "cfn-all.json")
-  (cfn-gen-write-resource-file "cfn-resources.el")
-  (cfn-gen-write-properties-file "cfn-properties.el"))
+  (cfn-gen-write-resource-file "cfn-resources.dat")
+  (cfn-gen-write-properties-file "cfn-properties.dat"))
 
 (provide 'cfn-gen)
 

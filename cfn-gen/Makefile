@@ -5,7 +5,7 @@ include ../common.mk
 EMACSFLAGS := -L ../cfn-mode
 FILES := cfn-gen.elc
 
-cfn-resources.el cfn-properties.el: cfn-gen.elc
+cfn-resources.dat cfn-properties.dat: cfn-gen.elc
 	$(CASK) exec $(EMACSBATCH) \
 		$(EMACSFLAGS) \
 		--eval "(require 'cfn-gen)" \

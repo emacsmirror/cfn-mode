@@ -2,7 +2,7 @@
 
 PACKAGES := cfn-mode flycheck-cfn
 
-GENERATED := cfn-mode/cfn-resources.el cfn-mode/cfn-properties.el
+GENERATED := cfn-mode/cfn-resources.dat cfn-mode/cfn-properties.dat
 
 build:
 	$(foreach pkg, $(PACKAGES), $(MAKE) -C $(pkg) $@;)
