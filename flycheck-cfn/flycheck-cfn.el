@@ -44,7 +44,7 @@
 (require 'flycheck)
 
 (defgroup flycheck-cfn nil
-  "Cloudformation support for flycheck"
+  "Cloudformation support for flycheck."
   :prefix "flycheck-cfn-"
   :group 'flycheck
   :link '(url-link :tag "Gitlab" "https://gitlab.com/worr/cfn-mode"))

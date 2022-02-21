@@ -61,7 +61,7 @@
 ;;;###autoload
 (define-derived-mode cfn-mode yaml-mode
   "AWS Cloudformation"
-  "Cloudformation mode derived from yaml-mode."
+  "Cloudformation mode derived from `yaml-mode'."
   (font-lock-add-keywords nil cfn-font-lock-keywords))
 
 ;; Detect cfn yaml files based on ~AWSTemplateFormatVersion~ property
