@@ -16,6 +16,15 @@ lint cfn-mode emacs26:
     - make lint
   image: silex/emacs:26-ci-cask
 
+lint cfn-mode emacs-master:
+  allow_failure: true
+  stage: test
+  script:
+    - cd cfn-mode
+    - make deps
+    - make lint
+  image: silex/emacs:master-ci-cask
+
 lint flycheck-cfn emacs27:
   stage: test
   script:
@@ -30,6 +39,15 @@ lint flycheck-cfn emacs26:
     - make deps
     - make lint
   image: silex/emacs:26-ci-cask
+
+lint flycheck-cfn emacs-master:
+  allow_failure: true
+  stage: test
+  script:
+    - cd flycheck-cfn
+    - make deps
+    - make lint
+  image: silex/emacs:master-ci-cask
 
 # only lint this in emacs27. it's dev-only so compat doesn't matter
 lint cfn-gen emacs27:
