@@ -3,3 +3,4 @@
 .#*
 .cask
 *~
+cfn-gen/cfn-all.json
