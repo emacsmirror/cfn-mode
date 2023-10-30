@@ -18,10 +18,10 @@ clean:
 
 defs: $(GENERATED)
 
-cfn-gen/%.el:
+cfn-gen/%.dat:
 	$(MAKE) -C $(@D) $(@F)
 
-cfn-mode/%.el: cfn-gen/%.el FORCE
+cfn-mode/%.dat: cfn-gen/%.dat FORCE
 	mv $< $@
 
 FORCE:
