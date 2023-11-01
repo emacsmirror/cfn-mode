@@ -4,11 +4,17 @@
 
 ** cfn-mode
 
+[[https://melpa.org/#/cfn-mode][file:https://melpa.org/packages/cfn-mode-badge.svg]]
+[![MELPA Stable](https://stable.melpa.org/packages/cfn-mode-badge.svg)](https://stable.melpa.org/#/cfn-mode)
+
 A basic emacs mode for working with AWS Cloudformation
 
 *** Configuration
 
 ** flycheck-cfn
+
+[[https://melpa.org/#/flycheck-cfn][file:https://melpa.org/packages/flycheck-cfn-badge.svg]]
+[![MELPA Stable](https://stable.melpa.org/packages/flycheck-cfn-badge.svg)](https://stable.melpa.org/#/flycheck-cfn)
 
 Syntax checking for AWS Cloudformation through flycheck
 
