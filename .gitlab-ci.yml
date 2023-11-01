@@ -1,56 +1,36 @@
-default:
-  image: silex/emacs:27-ci-cask
-
-lint cfn-mode emacs27:
+lint cfn-mode:
+  image: silex/emacs:$VERSION-ci-cask
   stage: test
   script:
     - cd cfn-mode
     - make deps
     - make lint
+  parallel:
+    matrix:
+      - VERSION: 26
+      - VERSION: 27
+      - VERSION: 28
+      - VERSION: 29
+      - VERSION: master
 
-lint cfn-mode emacs26:
-  stage: test
-  script:
-    - cd cfn-mode
-    - make deps
-    - make lint
-  image: silex/emacs:26-ci-cask
-
-lint cfn-mode emacs-master:
-  allow_failure: true
-  stage: test
-  script:
-    - cd cfn-mode
-    - make deps
-    - make lint
-  image: silex/emacs:master-ci-cask
-
-lint flycheck-cfn emacs27:
+lint flycheck-cfn:
+  image: silex/emacs:$VERSION-ci-cask
   stage: test
   script:
     - cd flycheck-cfn
     - make deps
     - make lint
+  parallel:
+    matrix:
+      - VERSION: 26
+      - VERSION: 27
+      - VERSION: 28
+      - VERSION: 29
+      - VERSION: master
 
-lint flycheck-cfn emacs26:
-  stage: test
-  script:
-    - cd flycheck-cfn
-    - make deps
-    - make lint
-  image: silex/emacs:26-ci-cask
-
-lint flycheck-cfn emacs-master:
-  allow_failure: true
-  stage: test
-  script:
-    - cd flycheck-cfn
-    - make deps
-    - make lint
-  image: silex/emacs:master-ci-cask
-
-# only lint this in emacs27. it's dev-only so compat doesn't matter
-lint cfn-gen emacs27:
+# only lint this in emacs29. it's dev-only so compat doesn't matter
+lint cfn-gen:
+  image: silex/emacs:29-ci-cask
   stage: test
   script:
     - cd cfn-gen
