@@ -982,6 +982,7 @@
  "AWS::SES::ContactList"
  "AWS::SES::DedicatedIpPool"
  "AWS::SES::EmailIdentity"
+ "AWS::SES::ReceiptFilter"
  "AWS::SES::ReceiptRule"
  "AWS::SES::ReceiptRuleSet"
  "AWS::SES::Template"
