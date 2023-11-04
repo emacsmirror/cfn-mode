@@ -12,6 +12,7 @@ lint:
   rules:
     - if: $VERSION == "master"
       allow_failure: true
+    - if: $VERSION
 
 # only lint this in emacs29. it's dev-only so compat doesn't matter
 lint cfn-gen:
