@@ -31,6 +31,7 @@
 (require 'f)
 (require 'request)
 (require 's)
+(require 'seq)
 
 (defconst cfn-gen-regional-cfn-urls
   '((us-east-2 . "https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json")
@@ -133,10 +134,25 @@
    coding-category-utf-8
    filename))
 
+(defun cfn-gen-filter-bad-tokens (token-list)
+  "Filters out tokens from TOKEN-LIST that look invalid."
+  (seq-filter
+   (apply-partially
+    'string-match-p
+    (rx
+     line-start
+     (one-or-more alnum)
+     (zero-or-more
+      (and "::"
+           (one-or-more alnum)))
+     line-end))
+   token-list))
+
 (defun cfn-gen-write-resource-file (filename)
   "Write all of the resources into FILENAME."
   (cfn-gen-serialize-to-file
-   (if-let ((cfn-gen-resources (cfn-gen-get-types cfn-gen-dump)))
+   (if-let ((cfn-gen-resources (cfn-gen-filter-bad-tokens
+                                (cfn-gen-get-types cfn-gen-dump))))
        cfn-gen-resources
      (error "Got 0 resources from AWS; aborting"))
    filename))
@@ -144,7 +160,8 @@
 (defun cfn-gen-write-properties-file (filename)
   "Write all of the properties into FILENAME."
   (cfn-gen-serialize-to-file
-   (if-let ((cfn-gen-properties (cfn-gen-get-properties cfn-gen-dump)))
+   (if-let ((cfn-gen-properties (cfn-gen-filter-bad-tokens
+                                 (cfn-gen-get-properties cfn-gen-dump))))
        cfn-gen-properties
      (error "Got 0 properties from AWS; aborting"))
    filename))
