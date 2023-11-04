@@ -9,6 +9,9 @@ lint:
     matrix:
       - VERSION: [26, 27, 28, 29, master]
         PROJ: [cfn-mode, flycheck-cfn]
+  rules:
+    - if: $VERSION == "master"
+      allow_failure: true
 
 # only lint this in emacs29. it's dev-only so compat doesn't matter
 lint cfn-gen:
