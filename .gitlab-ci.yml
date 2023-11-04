@@ -13,6 +13,7 @@ lint:
     - if: $VERSION == "master"
       allow_failure: true
     - if: $VERSION
+    - if: $CI_PIPELINE_SOURCE != "schedule"
 
 # only lint this in emacs29. it's dev-only so compat doesn't matter
 lint cfn-gen:
@@ -22,3 +23,7 @@ lint cfn-gen:
     - cd cfn-gen
     - make deps
     - make lint
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+
+include: .gitlab-sched.yml
