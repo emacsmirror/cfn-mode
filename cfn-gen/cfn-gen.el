@@ -5,7 +5,7 @@
 ;; Author: William Orr <will@worrbase.com>
 ;; Version: 1.0.2
 ;; Keywords: convenience
-;; Package-Requires: ((emacs "27.1") (f "0.20.0") (request "0.3.2"))
+;; Package-Requires: ((emacs "27.1") (f "0.20.0") (request "0.3.2") (s "1.12.0"))
 ;; URL: https://gitlab.com/worr/cfn-mode
 
 ;; cfn-gen is free software; you can redistribute it and/or modify it
@@ -30,6 +30,7 @@
 (require 'cl-lib)
 (require 'f)
 (require 'request)
+(require 's)
 
 (defconst cfn-gen-regional-cfn-urls
   '((us-east-2 . "https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json")
@@ -127,7 +128,8 @@
 (defun cfn-gen-serialize-to-file (object filename)
   "Write elisp OBJECT to FILENAME."
   (f-write-text
-   (prin1-to-string object)
+   (s-replace-all '((" " . "\n "))
+                  (prin1-to-string object))
    coding-category-utf-8
    filename))
 
