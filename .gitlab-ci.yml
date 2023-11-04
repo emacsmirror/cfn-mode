@@ -1,32 +1,14 @@
-lint cfn-mode:
+lint:
   image: silex/emacs:$VERSION-ci-cask
   stage: test
   script:
-    - cd cfn-mode
+    - cd $PROJ
     - make deps
     - make lint
   parallel:
     matrix:
-      - VERSION: 26
-      - VERSION: 27
-      - VERSION: 28
-      - VERSION: 29
-      - VERSION: master
-
-lint flycheck-cfn:
-  image: silex/emacs:$VERSION-ci-cask
-  stage: test
-  script:
-    - cd flycheck-cfn
-    - make deps
-    - make lint
-  parallel:
-    matrix:
-      - VERSION: 26
-      - VERSION: 27
-      - VERSION: 28
-      - VERSION: 29
-      - VERSION: master
+      - VERSION: [26, 27, 28, 29, master]
+        PROJ: [cfn-mode, flycheck-cfn]
 
 # only lint this in emacs29. it's dev-only so compat doesn't matter
 lint cfn-gen:
