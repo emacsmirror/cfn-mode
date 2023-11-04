@@ -134,13 +134,17 @@
 (defun cfn-gen-write-resource-file (filename)
   "Write all of the resources into FILENAME."
   (cfn-gen-serialize-to-file
-   (cfn-gen-get-types cfn-gen-dump)
+   (if-let ((cfn-gen-resources (cfn-gen-get-types cfn-gen-dump)))
+       cfn-gen-resources
+     (error "Got 0 resources from AWS; aborting."))
    filename))
 
 (defun cfn-gen-write-properties-file (filename)
   "Write all of the properties into FILENAME."
   (cfn-gen-serialize-to-file
-   (cfn-gen-get-properties cfn-gen-dump)
+   (if-let ((cfn-gen-properties (cfn-gen-get-properties cfn-gen-dump)))
+       cfn-gen-properties
+     (error "Got 0 properties from AWS; aborting."))
    filename))
 
 (defun cfn-gen-batch-all-defaults ()
