@@ -5,6 +5,7 @@ lint:
     - cd $PROJ
     - make deps
     - make lint
+    - make test
   parallel:
     matrix:
       - VERSION: [26, 27, 28, 29, master]
@@ -23,6 +24,7 @@ lint cfn-gen:
     - cd cfn-gen
     - make deps
     - make lint
+    - make test
   rules:
     - if: $CI_PIPELINE_SOURCE != "schedule"
 

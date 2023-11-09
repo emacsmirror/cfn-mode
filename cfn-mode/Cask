@@ -8,4 +8,6 @@
 (depends-on "yaml-mode")
 
 (development
- (depends-on "elisp-lint"))
+ (depends-on "elisp-lint")
+ (depends-on "ert")
+ (depends-on "ert-runner"))

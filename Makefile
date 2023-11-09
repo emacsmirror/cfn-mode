@@ -1,4 +1,3 @@
-.PHONY = build deps lint clean defs FORCE
 
 PACKAGES := cfn-mode flycheck-cfn
 
@@ -13,6 +12,9 @@ deps:
 lint:
 	$(foreach pkg, $(PACKAGES), $(MAKE) -C $(pkg) $@;)
 
+test:
+	$(foreach pkg, $(PACKAGES), $(MAKE) -C $(pkg) $@;)
+
 clean:
 	$(foreach pkg, $(PACKAGES), $(MAKE) -C $(pkg) $@;)
 
@@ -25,3 +27,4 @@ cfn-mode/%.dat: cfn-gen/%.dat FORCE
 	mv $< $@
 
 FORCE:
+.PHONY: build deps lint clean defs test FORCE

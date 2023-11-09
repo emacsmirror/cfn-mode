@@ -6,4 +6,6 @@
 (depends-on "flycheck")
 
 (development
- (depends-on "elisp-lint"))
+ (depends-on "elisp-lint")
+ (depends-on "ert")
+ (depends-on "ert-runner"))

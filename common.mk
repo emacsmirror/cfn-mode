@@ -1,5 +1,3 @@
-.PHONY = deps build lint clean
-
 CASK ?= cask
 EMACS ?= emacs
 EMACSBATCH = $(EMACS) -Q -batch
@@ -11,15 +9,20 @@ EMACSFLAGS ?=
 deps:
 	$(CASK) install
 
-build: $(FILES) deps
+build: $(FILES)
 
-lint: $(FILES) deps
+lint: $(FILES)
 	$(CASK) exec $(EMACSBATCH) \
 		$(EMACSFLAGS) \
 		--eval "(require 'elisp-lint)" \
 		-f elisp-lint-files-batch \
 		$(patsubst %.elc,%.el,$(FILES))
 
+test: $(FILES)
+	$(CASK) exec ert-runner
+
 clean:
 	cask clean-elc
 	rm -f *-autoloads.el *-autoloads.el~
+
+.PHONY: deps build lint clean test
