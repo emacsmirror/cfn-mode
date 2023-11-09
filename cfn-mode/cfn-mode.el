@@ -42,12 +42,11 @@
 (defun cfn--read-font-lock-keywords (filename)
   "Read font lock keywords from FILENAME."
   (read
-   (split-string
-    (f-read
-     (f-join
-      (f-dirname
-       (or load-file-name (buffer-file-name)))
-      filename)) "\n")))
+   (f-read
+    (f-join
+     (f-dirname
+      (or load-file-name (buffer-file-name)))
+     filename))))
 
 (defconst cfn-font-lock-keywords
   (let ((properties (cfn--read-font-lock-keywords "cfn-properties.dat"))
