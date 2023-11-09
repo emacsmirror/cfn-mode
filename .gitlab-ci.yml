@@ -1,4 +1,4 @@
-lint:
+test:
   image: silex/emacs:$VERSION-ci-cask
   stage: test
   script:
@@ -17,7 +17,7 @@ lint:
     - if: $CI_PIPELINE_SOURCE != "schedule"
 
 # only lint this in emacs29. it's dev-only so compat doesn't matter
-lint cfn-gen:
+test cfn-gen:
   image: silex/emacs:29-ci-cask
   stage: test
   script:
