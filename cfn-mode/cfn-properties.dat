@@ -72,6 +72,8 @@
  "AWS::AutoScaling::ScalingPolicy"
  "AWS::AutoScaling::WarmPool"
  "AWS::AutoScalingPlans::ScalingPlan"
+ "AWS::B2BI::Capability"
+ "AWS::B2BI::Transformer"
  "AWS::Backup::BackupPlan"
  "AWS::Backup::BackupSelection"
  "AWS::Backup::BackupVault"
