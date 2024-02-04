@@ -369,6 +369,7 @@
  "AWS::ImageBuilder::ImageRecipe"
  "AWS::ImageBuilder::InfrastructureConfiguration"
  "AWS::ImageBuilder::LifecyclePolicy"
+ "AWS::InspectorV2::CisScanConfiguration"
  "AWS::InspectorV2::Filter"
  "AWS::InternetMonitor::Monitor"
  "AWS::IoT1Click::Project"
