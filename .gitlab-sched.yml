@@ -25,4 +25,4 @@ commit:
     - git add cfn-mode/cfn-resources.dat cfn-mode/cfn-properties.dat
     - git diff --cached --quiet --exit-code && exit 0
     - "git commit -m 'AUTO: Updating definitions'"
-    - git push -o merge_request.create -o merge_request.merge_when_pipeline_succeeds -o merge_request.remove_source_branch
+    - git push -o merge_request.create -o merge_request.remove_source_branch
