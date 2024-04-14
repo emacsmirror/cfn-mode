@@ -107,6 +107,7 @@
  "AWS::CleanRooms::Collaboration"
  "AWS::CleanRooms::ConfiguredTable"
  "AWS::CleanRooms::Membership"
+ "AWS::CleanRooms::PrivacyBudgetTemplate"
  "AWS::CleanRoomsML::TrainingDataset"
  "AWS::Cloud9::EnvironmentEC2"
  "AWS::CloudFormation::HookVersion"
