@@ -8,7 +8,7 @@ test:
     - make test
   parallel:
     matrix:
-      - VERSION: [26, 27, 28, 29, master]
+      - VERSION: [27, 28, 29, master]
         PROJ: [cfn-mode, flycheck-cfn]
   rules:
     - if: $VERSION == "master"
