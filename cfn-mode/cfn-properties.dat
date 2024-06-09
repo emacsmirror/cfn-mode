@@ -620,6 +620,7 @@
  "AWS::ResourceGroups::Group"
  "AWS::RoboMaker::RobotApplication"
  "AWS::RoboMaker::SimulationApplication"
+ "AWS::RolesAnywhere::Profile"
  "AWS::RolesAnywhere::TrustAnchor"
  "AWS::Route53::CidrCollection"
  "AWS::Route53::HealthCheck"
