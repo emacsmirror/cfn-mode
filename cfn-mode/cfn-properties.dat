@@ -762,6 +762,7 @@
  "AWS::Wisdom::KnowledgeBase"
  "AWS::WorkSpaces::ConnectionAlias"
  "AWS::WorkSpaces::Workspace"
+ "AWS::WorkSpaces::WorkspacesPool"
  "AWS::WorkSpacesThinClient::Environment"
  "AWS::WorkSpacesWeb::IpAccessSettings"
  "AWS::WorkSpacesWeb::UserSettings"
