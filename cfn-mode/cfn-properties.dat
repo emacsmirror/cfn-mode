@@ -595,7 +595,6 @@
  "AWS::NetworkManager::TransitGatewayRouteTableAttachment"
  "AWS::NetworkManager::VpcAttachment"
  "AWS::NimbleStudio::Studio"
- "AWS::NimbleStudio::StudioComponent"
  "AWS::Notifications::EventRule"
  "AWS::Notifications::NotificationHub"
  "AWS::NotificationsContacts::EmailContact"
