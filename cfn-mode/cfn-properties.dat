@@ -254,6 +254,7 @@
  "AWS::DataZone::Owner"
  "AWS::DataZone::Project"
  "AWS::DataZone::ProjectMembership"
+ "AWS::DataZone::ProjectProfile"
  "AWS::DataZone::SubscriptionTarget"
  "AWS::DataZone::UserProfile"
  "AWS::Deadline::Fleet"
