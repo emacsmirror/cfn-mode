@@ -143,6 +143,7 @@
  "AWS::Batch::JobDefinition"
  "AWS::Batch::JobQueue"
  "AWS::Batch::SchedulingPolicy"
+ "AWS::Batch::ServiceEnvironment"
  "AWS::Bedrock::Agent"
  "AWS::Bedrock::AgentAlias"
  "AWS::Bedrock::ApplicationInferenceProfile"
