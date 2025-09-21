@@ -641,6 +641,7 @@
  "AWS::ODB::CloudAutonomousVmCluster"
  "AWS::ODB::CloudExadataInfrastructure"
  "AWS::ODB::CloudVmCluster"
+ "AWS::ODB::OdbNetwork"
  "AWS::OSIS::Pipeline"
  "AWS::Oam::Link"
  "AWS::ObservabilityAdmin::OrganizationTelemetryRule"
