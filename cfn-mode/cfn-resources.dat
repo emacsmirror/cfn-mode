@@ -1520,4 +1520,5 @@
  "AWS::XRay::ResourcePolicy"
  "AWS::XRay::SamplingRule"
  "AWS::XRay::TransactionSearchConfig"
- "Alexa::ASK::Skill")
+ "Alexa::ASK::Skill"
+ "Dev::ServiceCatalog::LaunchRoleConstraint")
