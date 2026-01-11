@@ -434,6 +434,7 @@
  "AWS::DocDB::DBInstance"
  "AWS::DocDB::DBSubnetGroup"
  "AWS::DocDB::EventSubscription"
+ "AWS::DocDB::GlobalCluster"
  "AWS::DocDBElastic::Cluster"
  "AWS::DynamoDB::GlobalTable"
  "AWS::DynamoDB::Table"
@@ -1144,6 +1145,7 @@
  "AWS::QBusiness::WebExperience"
  "AWS::QLDB::Ledger"
  "AWS::QLDB::Stream"
+ "AWS::QuickSight::ActionConnector"
  "AWS::QuickSight::Analysis"
  "AWS::QuickSight::CustomPermissions"
  "AWS::QuickSight::Dashboard"
@@ -1520,5 +1522,4 @@
  "AWS::XRay::ResourcePolicy"
  "AWS::XRay::SamplingRule"
  "AWS::XRay::TransactionSearchConfig"
- "Alexa::ASK::Skill"
- "Dev::ServiceCatalog::LaunchRoleConstraint")
+ "Alexa::ASK::Skill")
