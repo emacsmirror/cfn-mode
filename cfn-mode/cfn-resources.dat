@@ -585,6 +585,8 @@
  "AWS::EMR::Studio"
  "AWS::EMR::StudioSessionMapping"
  "AWS::EMR::WALWorkspace"
+ "AWS::EMRContainers::Endpoint"
+ "AWS::EMRContainers::SecurityConfiguration"
  "AWS::EMRContainers::VirtualCluster"
  "AWS::EMRServerless::Application"
  "AWS::EVS::Environment"
