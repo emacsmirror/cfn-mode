@@ -589,6 +589,7 @@
  "AWS::Lightsail::Bucket"
  "AWS::Lightsail::Container"
  "AWS::Lightsail::Database"
+ "AWS::Lightsail::DatabaseSnapshot"
  "AWS::Lightsail::Disk"
  "AWS::Lightsail::DiskSnapshot"
  "AWS::Lightsail::Distribution"
