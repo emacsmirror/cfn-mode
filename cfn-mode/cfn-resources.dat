@@ -441,6 +441,7 @@
  "AWS::Detective::OrganizationAdmin"
  "AWS::DevOpsAgent::AgentSpace"
  "AWS::DevOpsAgent::Association"
+ "AWS::DevOpsAgent::PrivateConnection"
  "AWS::DevOpsAgent::Service"
  "AWS::DevOpsGuru::LogAnomalyDetectionIntegration"
  "AWS::DevOpsGuru::NotificationChannel"

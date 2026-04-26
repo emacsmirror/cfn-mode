@@ -307,6 +307,7 @@
  "AWS::Deadline::StorageProfile"
  "AWS::DevOpsAgent::AgentSpace"
  "AWS::DevOpsAgent::Association"
+ "AWS::DevOpsAgent::PrivateConnection"
  "AWS::DevOpsAgent::Service"
  "AWS::DevOpsGuru::NotificationChannel"
  "AWS::DevOpsGuru::ResourceCollection"
