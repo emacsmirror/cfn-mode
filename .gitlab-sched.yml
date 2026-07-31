@@ -1,7 +1,7 @@
 gen:
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
-  image: silex/emacs:29-ci-cask
+  image: silex/emacs:30-ci-cask
   stage: build
   script:
     - make defs
@@ -13,7 +13,7 @@ gen:
 commit:
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
-  image: silex/emacs:29-ci-cask
+  image: silex/emacs:30-ci-cask
   stage: deploy
   before_script:
     - git config --global user.name "GitLab Auto Committer"
